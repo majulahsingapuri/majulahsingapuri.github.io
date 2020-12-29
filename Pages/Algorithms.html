@@ -88,7 +88,7 @@
 							As an introduction to basic Algorithms, this project was pretty informative as to the real world use of Algorithms.
 							<!-- Due to my background in competitive programming, I have always understood the need for efficient algorithms but seeing it in use first-hand really puts things into perspective. -->
 						</p>
-						<!-- <hr />
+						<hr />
 						
 						<header>
 							<h3>Pathfinding</h3>
@@ -97,35 +97,47 @@
 						
 						<h4>The Problem</h4>
 						<p>
-							
+							This Project was related to the field of Graph Traversal Problems where there is a starting node and the goal is to find the shortest path to a particular node.
+							In this project, the scenario that was given was that we would have to find the path firstly from every node to its nearest hospital, then to the 2 nearest hospitals.
+							Eventually we would have to find the path to the <code>n</code> nearest hospitals.
 						</p>
 
 						<h4>Approach</h4>
 						<p>
-							
+							This problem was particularly tricky as we had to run the code on a test case that mapped the state of California, which had over a million nodes that represent every intersection in the state.
+							We realised that instead of going to every node and trying to find a hospital, it would be more efficient to start with the hospitals and branch out to find its nearest nodes.
+							This approach can then be modified later for the higher test cases.
 						</p>
 
 						<h4>Implementation</h4>
 						<p>
-							
+							As with the previous project, we used <code>Python</code> to write out the algorithm as it is pretty straightforward to use.
+							I also had an existing implementation of a Queue Structure in Python so that saved us a lot of time.
+							Initially we stored the path to every hospital in each node and then copied it over to its connected nodes but we realised that that was very memory inefficient so we decided to split up the algorithm in to 2 phases.
+							The first phase will create pointers to each node's previous node and the second phase will traverse the graph again to print out the path for each node.
+							We also managed to scale this up for <code>n</code> hospitals, after much difficulty.
 						</p>
 
 						<h4>Analysis</h4>
 						<p>
-							
+							Our initial trial of the Algorithm took over 15 minutes to execute, even on Nicholas' fast gaming laptop.
+							After making the modifications above, we managed to bring the time down to a handful of seconds and still maintain our algorithm accuracy.
+							We did have some issues with Python, as it can behave in unexpected ways due to a lot of the processes being under-the-hood but we managed to find solutions and workarounds.
 						</p>
 
 						<h4>Conclusion</h4>
 						<p>
-							
+							This project was pretty challenging as the sheer size of the dataset was a problem and finding an algorithm that works in a couple of seconds, while being accurate, was a challenge.
+							I'm glad that we managed to pull through and deliver an algorithm that performed up to our, and the professor's, expectations.
 						</p>
+						<hr />
 
 						<h2>Final Thoughts</h2>
 						<p>
 							Due to my background in competitive programming, I have always understood the need for efficient algorithms but seeing it in use first-hand really puts things into perspective.
 							Both of these projects have shown how differnet algorithms are used in different scenarios in order to help us achieve tasks in the quickest way possible.
 							add on something else
-						</p> -->
+						</p>
 					</section>
 
 					<section>

@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+	<head>
+		<title>Warzone Tourney</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="/index.html" class="image avatar"><img src="/images/avatar.jpg" alt="" /></a>
+					<h1><strong>I am Bhargav Singapuri</strong>, and this is<br>
+						my Ruby on Rails Application for a<br>
+						Warzone Tournament with Friends.
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h2>Warzone Tourney</h2>
+							<p>
+								A Ruby on Rails website running on a Heroku backend, just to play Warzone with more friends :)
+							</p>
+						</header>
+					</section>
+
+				<!-- Two -->
+					<section id="two">
+						<h2>Background</h2>
+
+						<section>
+							<h4>How did it come about?</h4>
+							<p>
+								I have, at this point been playing <a href="https://www.callofduty.com">Warzone</a> for over 6 months and it has become one of the primary way The Boys and I bond.
+								We play this game not just for the entertainment value, but also to strengthen the brotherhood and get that elusive "dub".
+								We realised that most of the games that we were playing were pretty difficult due to the whole <b>Skill-Based Match Making</b> that Activision uses.
+								
+							</p>
+							
+							<p>
+								The game developers finally added a way for us to make custom private games but of course there are minimum player requirements for it.
+								Hence, there was a need for us to find more people that play the game, so that we can all have a great time and make friends at the same time.
+							</p>
+							
+							<h4>Ruby on Rails</h4>
+							<p>
+								I was first introduced to <a href="https://rubyonrails.org">Ruby on Rails</a> back when I started my internship at Tinkertanker.
+								One of the onboarding intern projects was to create a simple CRUD website that keeps track of a couple of fields, which I cannot recall off the back of my head.
+								Obviously I didn't complete that project as I had no idea how to wrap my head around the entire process back then (and I was adamant on doing only iOS development LOL).
+							</p>
+
+							<p>
+								I realised that the simplicity of the way Ruby on Rails works makes it perfect for this project.
+								It is also modular like Python so I can add in packages (<code>Gems</code>) as needed to add functionality to my website.
+								Although I have never learnt Ruby ever, I thought how hard could it be to watch a few YouTube videos and figuring it out myself?
+							</p>
+							<hr />
+						</section>
+
+						<section>
+							<h2>The Journey</h2>
+
+							<header>
+								<h4>Crash Course</h4>
+								<p>A 4 hour scenic journey completed in 2.</p>
+							</header>
+							<p>
+								As any Uni kid will say, "You have to watch your lectures at 2x speed" and the same holds for any YouTube video as well.
+								I watched <a href="https://youtu.be/fmyvWz5TUWg">this</a> video one sleepless night at 5 am in the morning and surprisingly understood most of it.
+								It also cemented my view that it was the perfect platform to use for the application.
+								Most of the crash course covered things that I would need to do for my actual application, albeit a few changes here and there.
+							</p>
+
+							<header>
+								<h4>Liftoff</h4>
+								<p>Houston we have ignition</p>
+							</header>
+							<p>
+								The tutorial was generally easy to follow and the application was coming along well.
+								All the basic functions worked well and I even managed to add in addtional stylistic changes such as making the Show, Edit, Destroy options appear as a dropdown and only visible to the Team owner.
+								I also managed to add more <a href="https://getbootstrap.com">Bootstrap</a> stylings than shown in the tutorial to achieve the exact look that I was going for.
+								It was simple yet elegant and it worked.
+							</p>
+
+							<header>
+								<h4>Tragedy Strikes</h4>
+								<p>Houston we have a problem</p>
+							</header>
+							<p>
+								The tutorial covered adding in <a href="https://github.com/heartcombo/devise">Devise</a>, which included the wonderful world of adding a user sign in system to the platform.
+								It also covered the use of <a href="https://heroku.com">Heroku</a>, which is a wonderful hosting platform that allows the use of free resources to host and test such a application with ease.
+								Or so I thought.
+							</p>
+
+							<p>
+								The first issue that I had was with Devise.
+								I wanted to make the user confirm their email before they can proceed to log in and create their team.
+								The issue with that was getting the Gmail server to stop blocking my log in requests by placing CAPTCHAs between my mail request and it actually carrying out the delivery.
+								I managed to overcome that issue by using <a href="https://sendgrid.com">SendGrid</a>, which is a free SMTP mail server that thankfully allows for verification by the use of API keys and thus eliminates the CAPTCHA issue.
+								The mails still show "sent via SendGrid" but who cares for a hobby application?
+							</p>
+
+							<p>
+								The second issue that I had was with Heroku constantly failing to build my <code>Rake</code> tasks for some reason.
+								The command worked perfectly well on my machine but on the server it was causing problems.
+								I also removed the Tests to make sure that it deploys but to no avail.
+								After a whole day of frantic Googling (and some intense Warzone matches), I found a comment on StackOverflow that said that it might be related to my Ruby version.
+								Lo and behold, once I updated that, it all magically worked.
+								Coders really are professional Googlers.
+							</p>
+
+							<header>
+								<h4>Re-entry</h4>
+								<p>7 minutes of tension</p>
+							</header>
+							<p>
+								After fixing all of these issues, the application was finally deployed up to Heroku and it actually did work!
+								We managed to get a few people to register for the tourney.
+								The tourney has yet to be completed at the time of writing so we shall see how it goes!
+								I also managed to add in a countdown timer till the start of the tourney and a Discord server as well.
+							</p>
+
+							<hr />
+						</section>
+
+						<section>
+							<h2>Conclusion</h2>
+
+							<p>
+								Despite it being such a rushed project (it only took me 3 days to do), I have to say that it turned out pretty well.
+								I do definitely want to properly learn the ins and outs of Rails so that going forward, I am more prepared for my Software Engineering module in my upcoming semester.
+								It definitely would have helped to have learnt this earlier but it is never too late to learn.
+								Now I hope that my groupmates for that Software Engineering project can keep up and learn the system quickly.
+							</p>
+							<hr />
+						</section>
+
+						<section>
+							<header>
+								<h3>Images</h3>
+								<p>Here are some screen grabs from the application.</p>
+							</header>
+							<!-- TODO make this images a lot nicer -->
+							<div class="box alt">
+								<div class="row gtr-50 gtr-uniform">
+									<div class="col-12"><span class="image fit"><img src="/images/Warzone Tourney/Home Page.png" alt="Home Page" /></span></div>
+									<div class="col-12"><span class="image fit"><img src="/images/Warzone Tourney/Teams Page.png" alt="Teams Page" /></span></div>
+								</div>
+							</div>
+							<hr />
+						</section>
+
+						<section>
+							<h3>External Links</h3>
+							<ul class="actions small">
+								<li><a href="https://github.com/majulahsingapuri/WarzoneTourney" class="button primary small">Source Code</a></li>
+								<li><a href="https://warzonetourney.herokuapp.com" class="button primary small">Website</a></li>
+								<li><a href="https://discord.gg/QMEJQmwqVW" class="button primary small">Discord</a></li>
+							</ul>
+						</section>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<ul class="icons">
+					<li><a href="https://github.com/majulahsingapuri" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="https://www.linkedin.com/in/bhargav-singapuri-600aa7185/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://www.instagram.com/majulahsingapuri/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="https://twitter.com/majulasingapuri" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Bhargav Singapuri</li>
+				</ul>
+			</div>
+		</footer>
+
+		<!-- Scripts -->
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/jquery.poptrox.min.js"></script>
+		<script src="/assets/js/browser.min.js"></script>
+		<script src="/assets/js/breakpoints.min.js"></script>
+		<script src="/assets/js/util.js"></script>
+		<script src="/assets/js/main.js"></script>
+
+	</body>
+</html>
