@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmajulahsingapuri_github_io=self.webpackChunkmajulahsingapuri_github_io||[]).push([[9627],{6074:(e,t,n)=>{n.r(t),n.d(t,{default:()=>c});var u=n(7294),a=n(2263),i=n(2566),l=n(272);function c(){const{siteConfig:e}=(0,a.Z)();return u.createElement(i.Z,null,u.createElement("h2",null,"Site config"),u.createElement(l.Z,{src:e,collapseDepth:3}))}}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmajulahsingapuri_github_io=self.webpackChunkmajulahsingapuri_github_io||[]).push([[713],{3457:a=>{a.exports=JSON.parse('[{"label":"hello","permalink":"/blog/tags/hello","count":1}]')}}]);
