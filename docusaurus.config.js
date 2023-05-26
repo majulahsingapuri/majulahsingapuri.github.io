@@ -22,6 +22,10 @@ const config = {
     locales: ['en'],
   },
 
+  themes: [
+    '@saucelabs/theme-github-codeblock'
+  ],
+
   plugins: [
     async function tailwindPlugin(context, options) {
       return {
@@ -34,6 +38,18 @@ const config = {
         },
       };
     },
+    [
+      'docusaurus2-dotenv',
+      {
+        path: "./.env",
+        safe: false,
+        systemvars: false,
+        silent: false,
+        expand: false,
+        defaults: false,
+      }
+    ],
+    'plugin-image-zoom'
   ],
 
   presets: [
@@ -41,23 +57,18 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
+        debug: true,
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          filename: 'sitemap.xml'
+        }
       }),
     ],
   ],
@@ -74,13 +85,7 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Tutorial',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          { to: '/blog', label: 'Blog', position: 'left' },
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
@@ -91,15 +96,6 @@ const config = {
       footer: {
         style: 'dark',
         links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
           {
             title: 'Community',
             items: [
@@ -136,6 +132,19 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      imageZoom: {
+        // CSS selector to apply the plugin to, defaults to '.markdown img'
+        selector: '.markdown img',
+        // Optional medium-zoom options
+        // see: https://www.npmjs.com/package/medium-zoom#options
+        options: {
+          margin: 24,
+          background: '#BADA55',
+          scrollOffset: 0,
+          container: '#zoom-container',
+          template: '#zoom-template',
+        },
       },
     }),
 };
