@@ -27,17 +27,6 @@ const config = {
   ],
 
   plugins: [
-    async function tailwindPlugin(context, options) {
-      return {
-        name: "docusaurus-tailwindcss",
-        configurePostCss(postcssOptions) {
-          // Appends TailwindCSS and AutoPrefixer.
-          postcssOptions.plugins.push(require("tailwindcss"));
-          postcssOptions.plugins.push(require("autoprefixer"));
-          return postcssOptions;
-        },
-      };
-    },
     [
       'docusaurus2-dotenv',
       {
@@ -60,6 +49,18 @@ const config = {
         debug: true,
         blog: {
           showReadingTime: true,
+          blogTitle: 'Bhargav\'s blog',
+          blogDescription: 'A place for me to write some thoughts',
+          blogSidebarTitle: 'Read More',
+          feedOptions: {
+            type: 'all',
+            copyright: 'Bhargav Singapuri'
+          }
+        },
+        docs: {
+          path: 'docs',
+          routeBasePath: 'projects',
+          sidebarPath: require.resolve('./sidebars.js')
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -77,18 +78,19 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'Bhargav Singapuri',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
         },
         items: [
+          { type: 'doc', docId: 'introduction' ,label: 'Projects', position: 'left' },
           { to: '/blog', label: 'Blog', position: 'left' },
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
+            href: 'https://linktr.ee/MajulahSingapuri',
+            label: 'Linktree',
             position: 'right',
           },
         ],
@@ -97,37 +99,40 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Community',
+            title: 'Socials',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Github',
+                href: 'https://github.com/majulahsingapuri'
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'LinkedIn',
+                href: 'https://linkedin.com/in/bhargav-singapuri',
+              },
+              {
+                label: 'Instagram',
+                href: 'https://instagram.com/majulahsingapuri',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
+                href: 'https://twitter.com/majulasingapuri',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'TikTok',
+                href: 'https://tiktok.com/@majulahs',
+              },
+              {
+                label: 'Substack',
+                href: 'https://majulahsingapuri.substack.com',
+              },
+              {
+                label: 'Email',
+                href: 'mailto:bhsingapuri@gmail.com',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Bhargav Singapuri. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
@@ -144,6 +149,12 @@ const config = {
           scrollOffset: 0,
           container: '#zoom-container',
           template: '#zoom-template',
+        },
+      },
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
         },
       },
     }),

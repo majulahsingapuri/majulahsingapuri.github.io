@@ -10,32 +10,60 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Software Engineering',
+    Svg: require('@site/static/img/undraw_pull_request.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        A Full-Stack Software Engineer with experience in Web, Mobile
+        and backend development and deployment.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Data Science',
+    Svg: require('@site/static/img/undraw_predictive_analytics.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Trained in the latest Machine Learning tools and technologies as well
+        as Data Extraction, Wrangling and Storage.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Cloud Orchestration',
+    Svg: require('@site/static/img/undraw_cloud_hosting.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Experienced in provisioning, deploying and maintaining cloud infrastructure with
+        Terraform.
+      </>
+    ),
+  },
+  {
+    title: 'Communication Skills',
+    Svg: require('@site/static/img/undraw_interview.svg').default,
+    description: (
+      <>
+        With years of experience leading small teams, I have learnt to work
+        well with all sorts of people and get the job done.
+      </>
+    ),
+  },
+  {
+    title: 'Goal Oriented',
+    Svg: require('@site/static/img/undraw_done.svg').default,
+    description: (
+      <>
+        I get things done well and on time.
+      </>
+    ),
+  },
+  {
+    title: 'Team Player',
+    Svg: require('@site/static/img/undraw_pair_programming.svg').default,
+    description: (
+      <>
+        I am a team player and work well with my colleagues.
       </>
     ),
   },
