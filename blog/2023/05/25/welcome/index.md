@@ -6,7 +6,7 @@ tags: [hello]
 keywords: [introduction, blog, welcome, software, engineer, machine learning]
 image: https://github.com/majulahsingapuri.png
 hide_table_of_contents: false
-draft: true
+draft: false
 authors: bhargav
 ---
 
