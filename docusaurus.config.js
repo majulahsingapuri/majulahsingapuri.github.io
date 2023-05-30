@@ -118,7 +118,7 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Links",
+            title: "More Socials",
             items: [
               {
                 label: "Instagram",

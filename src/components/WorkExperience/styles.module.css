@@ -1,0 +1,6 @@
+.experience {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  width: 100%;
+}

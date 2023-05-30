@@ -6,6 +6,7 @@ import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
 
 import styles from "./index.module.css";
+import WorkExperience from "../components/WorkExperience";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -40,6 +41,14 @@ function HomepageHeader() {
           >
             👤 Contact Me!
           </a>
+          <a
+            className="button button--secondary button--lg margin-horiz--md"
+            href="Bhargav Resume.pdf"
+            target="_blank"
+            download={"Bhargav Resume"}
+          >
+            📝 Resume
+          </a>
         </div>
       </div>
     </header>
@@ -56,6 +65,7 @@ export default function Home(): JSX.Element {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <WorkExperience />
       </main>
     </Layout>
   );
