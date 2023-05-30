@@ -1,34 +1,41 @@
-import React from 'react';
-import clsx from 'clsx';
+import React from "react";
+import clsx from "clsx";
 
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Layout from "@theme/Layout";
+import HomepageFeatures from "@site/src/components/HomepageFeatures";
 
-import styles from './index.module.css';
+import styles from "./index.module.css";
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
-        <div style={{
+        <div
+          style={{
             display: "flex",
             justifyContent: "center",
-            alignItems: "center"
-          }}>
-          <img className='avatar__photo avatar__photo--xl' src="https://github.com/majulahsingapuri.png" alt="hero image" />
+            alignItems: "center",
+          }}
+        >
+          <img
+            className="avatar__photo avatar__photo--xl"
+            src="https://github.com/majulahsingapuri.png"
+            alt="hero image"
+          />
         </div>
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">
-          <strong>Transformations with Technology and Data Insights</strong> <br/>
+          <strong>Transformations with Technology and Data Insights</strong>{" "}
+          <br />
           Full Stack Software Engineer | AI & Machine Learning Specialist
         </p>
         <div className={styles.buttons}>
           <a
             className="button button--secondary button--lg"
-            href='contact.vcf'
-            target='_blank'
+            href="contact.vcf"
+            target="_blank"
             download={"Bhargav Singapuri"}
           >
             👤 Contact Me!
@@ -40,11 +47,12 @@ function HomepageHeader() {
 }
 
 export default function Home(): JSX.Element {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
       title={`${siteConfig.title} | ${siteConfig.tagline}`}
-      description="The personal site of Bhargav Singapuri">
+      description="The personal site of Bhargav Singapuri"
+    >
       <HomepageHeader />
       <main>
         <HomepageFeatures />

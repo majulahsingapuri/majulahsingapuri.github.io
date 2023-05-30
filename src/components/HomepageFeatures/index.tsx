@@ -1,76 +1,70 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from './styles.module.css';
+import React from "react";
+import clsx from "clsx";
+import styles from "./styles.module.css";
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  Svg: React.ComponentType<React.ComponentProps<"svg">>;
   description: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Software Engineering',
-    Svg: require('@site/static/img/undraw_pull_request.svg').default,
+    title: "Software Engineering",
+    Svg: require("@site/static/img/undraw_pull_request.svg").default,
     description: (
       <>
-        A Full-Stack Software Engineer with experience in Web, Mobile
-        and backend development and deployment.
+        A Full-Stack Software Engineer with experience in Web, Mobile and
+        backend development and deployment.
       </>
     ),
   },
   {
-    title: 'Data Science',
-    Svg: require('@site/static/img/undraw_predictive_analytics.svg').default,
+    title: "Data Science",
+    Svg: require("@site/static/img/undraw_predictive_analytics.svg").default,
     description: (
       <>
-        Trained in the latest Machine Learning tools and technologies as well
-        as Data Extraction, Wrangling and Storage.
+        Trained in the latest Machine Learning tools and technologies as well as
+        Data Extraction, Wrangling and Storage.
       </>
     ),
   },
   {
-    title: 'Cloud Orchestration',
-    Svg: require('@site/static/img/undraw_cloud_hosting.svg').default,
+    title: "Cloud Orchestration",
+    Svg: require("@site/static/img/undraw_cloud_hosting.svg").default,
     description: (
       <>
-        Experienced in provisioning, deploying and maintaining cloud infrastructure with
-        Terraform.
+        Experienced in provisioning, deploying and maintaining cloud
+        infrastructure with Terraform.
       </>
     ),
   },
   {
-    title: 'Thought Leader',
-    Svg: require('@site/static/img/undraw_interview.svg').default,
+    title: "Thought Leader",
+    Svg: require("@site/static/img/undraw_interview.svg").default,
     description: (
-      <>
-        Respected for industry knowledge and sharing innovative ideas.
-      </>
+      <>Respected for industry knowledge and sharing innovative ideas.</>
     ),
   },
   {
-    title: 'Goal Oriented',
-    Svg: require('@site/static/img/undraw_done.svg').default,
+    title: "Goal Oriented",
+    Svg: require("@site/static/img/undraw_done.svg").default,
     description: (
-      <>
-        Driven by setting and achieving objectives with a clear focus.
-      </>
+      <>Driven by setting and achieving objectives with a clear focus.</>
     ),
   },
   {
-    title: 'Team Player',
-    Svg: require('@site/static/img/undraw_pair_programming.svg').default,
+    title: "Team Player",
+    Svg: require("@site/static/img/undraw_pair_programming.svg").default,
     description: (
-      <>
-        Collaborative and effective in working within diverse teams.
-      </>
+      <>Collaborative and effective in working within diverse teams.</>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({ title, Svg, description }: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx("col col--4")}>
       <div className="text--center">
         <Svg className={styles.featureSvg} role="img" />
       </div>
