@@ -83,15 +83,31 @@ const config = {
         title: 'Bhargav Singapuri',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/bhargav.png',
+          className: "avatar__photo avatar__photo--sm"
         },
         items: [
+          // left
           { type: 'doc', docId: 'introduction' ,label: 'Projects', position: 'left' },
           { to: '/blog', label: 'Blog', position: 'left' },
+          // right
           {
-            href: 'https://linktr.ee/MajulahSingapuri',
-            label: 'Linktree',
+            href: 'https://github.com/majulahsingapuri',
             position: 'right',
+            className: 'header-github-link',
+            'aria-label': 'GitHub Profile',
+          },
+          {
+            href: 'https://linkedin.com/in/bhargav-singapuri',
+            position: 'right',
+            className: 'header-linkedin-link',
+            'aria-label': 'LinkedIn Profile',
+          },
+          {
+            href: 'https://twitter.com/majulasingapuri',
+            position: 'right',
+            className: 'header-twitter-link',
+            'aria-label': 'Twitter Profile',
           },
         ],
       },
@@ -99,23 +115,11 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Socials',
+            title: 'Links',
             items: [
-              {
-                label: 'Github',
-                href: 'https://github.com/majulahsingapuri'
-              },
-              {
-                label: 'LinkedIn',
-                href: 'https://linkedin.com/in/bhargav-singapuri',
-              },
               {
                 label: 'Instagram',
                 href: 'https://instagram.com/majulahsingapuri',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/majulasingapuri',
               },
               {
                 label: 'TikTok',

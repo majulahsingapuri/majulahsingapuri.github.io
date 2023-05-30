@@ -12,8 +12,18 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
+        <div style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+          }}>
+          <img className='avatar__photo avatar__photo--xl' src="https://github.com/majulahsingapuri.png" alt="hero image" />
+        </div>
         <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className="hero__subtitle">
+          <strong>Transformations with Technology and Data Insights</strong> <br/>
+          Full Stack Software Engineer | AI & Machine Learning Specialist
+        </p>
         <div className={styles.buttons}>
           <a
             className="button button--secondary button--lg"

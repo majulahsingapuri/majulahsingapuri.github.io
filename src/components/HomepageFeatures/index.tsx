@@ -40,12 +40,11 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Communication Skills',
+    title: 'Thought Leader',
     Svg: require('@site/static/img/undraw_interview.svg').default,
     description: (
       <>
-        With years of experience leading small teams, I have learnt to work
-        well with all sorts of people and get the job done.
+        Respected for industry knowledge and sharing innovative ideas.
       </>
     ),
   },
@@ -54,7 +53,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_done.svg').default,
     description: (
       <>
-        I get things done well and on time.
+        Driven by setting and achieving objectives with a clear focus.
       </>
     ),
   },
@@ -63,7 +62,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_pair_programming.svg').default,
     description: (
       <>
-        I am a team player and work well with my colleagues.
+        Collaborative and effective in working within diverse teams.
       </>
     ),
   },
