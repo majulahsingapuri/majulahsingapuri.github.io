@@ -42,7 +42,7 @@ const JobList: JobItem[] = [
         ensure that customers stayed within contractual obligations.
       </>,
     ],
-    years: "May 2021 - July 2022",
+    years: "May 2021 - July 2021",
   },
 ];
 

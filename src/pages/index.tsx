@@ -59,7 +59,7 @@ export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`${siteConfig.title} | ${siteConfig.tagline}`}
+      title={`${siteConfig.tagline}`}
       description="The personal site of Bhargav Singapuri"
     >
       <HomepageHeader />
