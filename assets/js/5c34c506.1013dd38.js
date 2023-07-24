@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmajulahsingapuri_github_io=self.webpackChunkmajulahsingapuri_github_io||[]).push([[1844],{7217:a=>{a.exports=JSON.parse('{"label":"prompt engineering","permalink":"/blog/tags/prompt-engineering","allTagsPath":"/blog/tags","count":1}')}}]);
