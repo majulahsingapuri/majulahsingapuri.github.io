@@ -8,7 +8,7 @@ keywords: [full stack, ruby, bootstrap]
 image: https://github.com/majulahsingapuri.png
 slug: warzone-tourney
 tags: [full stack, ruby, bootstrap]
-draft: true
+draft: false
 ---
 
 ## Background

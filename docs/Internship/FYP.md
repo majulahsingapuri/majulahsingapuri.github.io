@@ -8,7 +8,7 @@ keywords: [final year project, fyp, ntu, data science, machine learning]
 image: https://github.com/majulahsingapuri.png
 slug: fyp
 tags: [final year project, fyp, ntu, data science, machine learning]
-draft: true
+draft: false
 ---
 
 :::note

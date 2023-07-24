@@ -8,7 +8,7 @@ keywords: [stars, ntu, cli, tool]
 image: https://github.com/majulahsingapuri.png
 slug: stars
 tags: [stars, ntu, cli, tool]
-draft: true
+draft: false
 ---
 
 ## Background
