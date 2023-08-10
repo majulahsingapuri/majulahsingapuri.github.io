@@ -6,7 +6,6 @@ sidebar_position: 1
 sidebar_label: Warzone
 keywords: [full stack, ruby, bootstrap]
 image: https://github.com/majulahsingapuri.png
-slug: warzone-tourney
 tags: [full stack, ruby, bootstrap]
 draft: false
 ---
@@ -85,10 +84,10 @@ Now I hope that my groupmates for that Software Engineering project can keep up 
 
 ## Images
 
-| ![Home Page](../../static/img/docs/Personal/warzone-tourney/Home%20Page.png) |
-| :--------------------------------------------------------------------------: |
-|                                **Home Page**                                 |
+| ![Home Page](./Home%20Page.png) |
+| :-----------------------------: |
+|          **Home Page**          |
 
-| ![Teams Page](../../static/img/docs/Personal/warzone-tourney/Teams%20Page.png) |
-| :----------------------------------------------------------------------------: |
-|                                 **Teams Page**                                 |
+| ![Teams Page](./Teams%20Page.png) |
+| :-------------------------------: |
+|          **Teams Page**           |

@@ -5,8 +5,7 @@ description: A CLI tool for module registration in NTU
 sidebar_position: 1
 sidebar_label: NTU STARS
 keywords: [stars, ntu, cli, tool]
-image: https://github.com/majulahsingapuri.png
-slug: stars
+image: ./add-course.png
 tags: [stars, ntu, cli, tool]
 draft: false
 ---
@@ -75,18 +74,18 @@ It has been one of the most tiring yet fulfilling projects to date and I look fo
 
 ## Images
 
-| ![Add Course](../../static/img/docs/School/STARS/Add%20Course.png) |
-| :----------------------------------------------------------------: |
-|                           **Add Course**                           |
+| ![Add Course](./add-course.png) |
+| :-----------------------------: |
+|         **Add Course**          |
 
-| ![Login Screen](../../static/img/docs/School/STARS/Login%20Screen.png) |
-| :--------------------------------------------------------------------: |
-|                            **Login Screen**                            |
+| ![Login Screen](./login-screen.png) |
+| :---------------------------------: |
+|          **Login Screen**           |
 
-| ![Logout Screen](../../static/img/docs/School/STARS/Logout%20Screen.png) |
-| :----------------------------------------------------------------------: |
-|                            **Logout Screen**                             |
+| ![Logout Screen](./logout-screen.png) |
+| :-----------------------------------: |
+|           **Logout Screen**           |
 
-| ![Print Timetable](../../static/img/docs/School/STARS/Print%20Timetable.png) |
-| :--------------------------------------------------------------------------: |
-|                             **Print Timetable**                              |
+| ![Print Timetable](./print-timetable.png) |
+| :---------------------------------------: |
+|            **Print Timetable**            |

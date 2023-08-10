@@ -1,0 +1,125 @@
+---
+id: queue-stack
+title: Queue and Stack Visualiser
+description: A simple appliction in React with tailwind to help visualise how Queues and Stacks work.
+sidebar_position: 2
+sidebar_label: Queue-Stack
+keywords: [react, tailwind, queue, stack, visualisation]
+image: ./queue-stack.png
+tags: [react, tailwind, queue, stack, visualisation]
+draft: false
+---
+
+import Link from "@docusaurus/Link";
+
+<!-- markdownlint-disable MD033 -->
+
+<Link
+  className="button button--primary"
+  to="https://majulahsingapuri.github.io/queue-stack"
+>
+  Try it out!
+</Link>
+<Link
+  className="button button--secondary margin-left--md"
+  to="https://github.com/majulahsingapuri/queue-stack"
+>
+  View the code
+</Link>
+
+## Introduction
+
+As a visual learner myself, I am always on the lookout for interesting visualisations that help to explain concepts that might not be easy to explain verbally.
+This project came about in the midst of a training programme that I was attending where we were making React applications and I had challenged a friend of mine to use React to add elements to the `DOM` upon clicking a button and remove them by clicking another.
+Pretty simple right?
+
+We managed to get this simple program up and running easily using a simple Typescript `map` function and a few buttons.
+To add a new element to the end of the array, the code is:
+
+```tsx title="App.tsx: Add Element"
+setElements([...elements, <p className="px-2">Some Text</p>]);
+```
+
+And to remove the element from the end of the array the code is:
+
+```tsx title="App.tsx: Remove Element"
+setElements(
+  elements.filter((_, index) => {
+    return index !== elements.length - 1;
+  })
+);
+```
+
+Pretty sweet stuff
+
+## Data Structures
+
+Data structures are tools that are used by programs that help them to solve problems easily.
+Binary trees help to organise numbers in such a way as to find a target number in the least number of comparisons by having numbers smaller than the current node on the left and larger on the right.
+Heaps make use of a binary tree structure to sort the elements in the heap each time an element is removed from it.
+
+### Queue
+
+A queue is a data structure which follows the First-In-First-Out (FIFO) principle.
+This is used for applications such as Message Queues that require each data packet to be processed in order to ensure that the state of the application is intact in the event of a server shutdown.
+It also allows any server to process incoming requests.
+
+### Stack
+
+A stack is a data structure that follows the First-In-Last-Out (FILO) principle.
+This is used for simple things such as checking the validity of parenthesis in your code.
+It thus ensures that each bracket is closed in the correct order.
+
+![Stack and Queue](queue-stack.png)
+
+## Visualisation
+
+The application at this point would just add and remove elements from the end of the array.
+This essentially made it a visualisation of a stack!
+This got me thinking, "Can I use my existing Typescript knowledge to extend this to a simple yet fully functional visualisation for Stacks and Queues?"
+
+The only thing that I _really_ needed to change was the position that the element was removed from.
+Thus, I modified the code to remove the elements to the following based on a stateful variable that tracked the mode of the visualisation.
+
+```tsx title="App.tsx: Updated Element Removal"
+const handleRemoveElement = () => {
+  if (elements.length > 0) {
+    if (mode === "stack") {
+      setElements(
+        elements.filter((_, index) => {
+          return index !== elements.length - 1;
+        })
+      );
+    } else {
+      setElements(
+        elements.filter((_, index) => {
+          return index !== 0;
+        })
+      );
+    }
+  }
+};
+```
+
+With this, the basic functionality of the application was complete.
+
+## Styling
+
+Now a visualisation is all about, wait for it, the visuals 😮.
+Shocker, I know.
+Since I did not want to put in too much effort to do a lot of custom `css` and use something that will get the effect that I want with minimal effort as well as using a small package size, I decided to use `Tailwind` as a lightweight and fast framework that will get the job done.
+
+I have also used it previously in my other projects and so I was woefully fammiliar with it.
+Thus after a few minutes of creating `div`s and adding a bunch of flex boxes (don't hate me, I'm sure there will be a better way of doing it), the final product was complete.
+
+## Deployment
+
+This was by far the easiest part of the whole process.
+I had already set up a GitHub action to deploy GitHub Pages website for my personal website and thus it took little modification to reuse it for this new project.
+As usual, the action will lint the code for readability and then deploy the application to Pages, and it only takes about a minute!
+
+## Conclusion
+
+This was an interesting and short project that I managed to finish in just a few hours.
+Personally I think that having such smaller projects in the middle of larger ones will keep my mind fresh and keep me motivated to continue the larger project.
+Onto the next one!
