@@ -46,7 +46,7 @@ And to remove the element from the end of the array the code is:
 setElements(
   elements.filter((_, index) => {
     return index !== elements.length - 1;
-  })
+  }),
 );
 ```
 
@@ -88,13 +88,13 @@ const handleRemoveElement = () => {
       setElements(
         elements.filter((_, index) => {
           return index !== elements.length - 1;
-        })
+        }),
       );
     } else {
       setElements(
         elements.filter((_, index) => {
           return index !== 0;
-        })
+        }),
       );
     }
   }
