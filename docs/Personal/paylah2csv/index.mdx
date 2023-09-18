@@ -1,0 +1,121 @@
+---
+id: paylah2csv
+title: PayLah! eStatement Converter
+description: A simple appliction in PyScript that converts DBS PayLah! statements into CSV files
+sidebar_position: 3
+sidebar_label: PayLah2csv
+keywords: [pyscript, data, csv, processing]
+tags: [pyscript, project]
+draft: false
+---
+
+import Link from "@docusaurus/Link";
+
+<!-- markdownlint-disable MD033 -->
+
+<Link
+  className="button button--primary"
+  to="https://majulahsingapuri.github.io/paylah2csv"
+>
+  Try it out!
+</Link>
+<Link
+  className="button button--secondary margin-left--md"
+  to="https://github.com/majulahsingapuri/paylah2csv"
+>
+  View the code
+</Link>
+
+## Introduction
+
+Don't you just love it when companies provide features selectively?
+If you're serious about your finances (or at least want to be), you probably have an army of applications that help you track every cent entering and leaving your myriad of accounts.
+Popular apps on the App Stores for doing this very mundane funtion have the same basic featureset.
+
+1. Manually adding and removing transactions so you can cry over your net worth every day as you enter the (ever rising) price of cai png ([Economy Rice](https://en.wikipedia.org/wiki/Economy_rice) for non-[Sinkies](https://en.wiktionary.org/wiki/Sinkie#:~:text=Noun,Somebody%20from%20Singapore%3B%20a%20Singaporean%2e)) into the application.
+
+There are some apps with superhuman capabilities like [Seedly](https://seedly.sg) that allow you to directly import your transaction data from your respective banks.
+Sadly these apps cannot sync data from "wallets" (as opposed to "bank accounts") such as PayLah!
+Additionally, they may even lack the ability to [export](https://www.reddit.com/r/singaporefi/comments/or59ad/anyone_find_it_odd_that_you_can_export_a_csv_of/) the transaction data to csv.
+
+As we drown in the ever increasing avalanche of platforms/wallets with Pay in their name (seriously count them [all](#appendix)), we must find a way to bring the personal accounting control back to the one app that has stood the test of time as the undisputed king of accounting.
+
+Unfortunately it is not Numbers (sorry fellow Mac users we are still decades away from an actually usable spreadsheet app) but its **clearly** superior counterpart Excel.
+
+## Python Everywhere
+
+As an avid user of Python (see my [leetcode solutions](https://github.com/majulahsingapuri/leetcode) for proof), I am always on the lookout for new ways to use it in any way I can.
+I don't remember where I came across [PyScript](https://pyscript.net/) but I can swear I saw it on [Fireship](https://twitter.com/fireship_dev)'s [YouTube](https://www.youtube.com/c/Fireship) channel as he is always talking about new frameworks.
+If you do find the relevant video then please do [X/Tweet/write-it-on-a-paper-plane-and-hope-it-lands-on-me](https://twitter.com/majulasingapuri) me and I will forever be your grateful for proving that I have not lost my sanity.
+
+Anyways, PyScript is a framework built on top of [Pyodide](https://pyodide.org/en/stable/) (that runs Python on your web browser) and inserts that code as HTML.
+This allows you to directly interact your Python and HTML elements together and it seemed to me to be the perfect way to build this application to leverage all the great data science packages like `pandas` and at the same time maintain the security of the user's data by not having a backend server/database that the file is uploaded to.
+
+## Simplicity
+
+> Simplify, then add lightness - Colin Chapman
+
+This application doesn't have much functionality other than literally taking a pdf and extracting it to be a csv.
+The real challenge is that when trying to read the data, one cannot use OCR as each table row has 2 baselines.
+One for the transaction name and another for the reference number.
+
+The second challenge is rendering all the text using `pdfreader` results in a object of type `list[str]`, which also contains all the additional texts that are not in the table.
+So finding the relevant section will require some leetcode knowledge.
+
+## Algorithm
+
+The lucky thing about the way the `pdfreader` read the document was that all the data that is supposed to be in a table was a contiguous block in the middle of the list of strings.
+This essentially meant that all I had to do was to find the left and right bounds of the table and use some list comprehension to reshape it into a table.
+
+### Two Pointer
+
+These are a class [programming problems](https://leetcode.com/tag/two-pointers/) that make use of 2 pointers to find bounds or keep track of values in a close to linear `O(n)` time.
+Since the data is all in the middle, all I had to do was to create a left and right pointer and just iterate from either end and find keywords that denote the start and end points.
+
+## Challenges
+
+Of course any project without significant challenges is no true project at all.
+Here are just a few that I had to tackle.
+
+### Wheels?
+
+Yes.
+Wheels.
+But not the kind that you're thinking.
+Python ships its packages as `*.tar.gz` as well as `.whl` files.
+Unfortunately, PyScript only supports wheel installations through its `micropip` installer and `pdfreader` only ships [as a tarball](https://pypi.org/project/pdfreader/#files) 😢.
+
+Referring to the [documentation](https://pyodide.org/en/stable/usage/faq.html#why-can-t-micropip-find-a-pure-python-wheel-for-a-package), I could either ~~complain like the Singaporean I am~~ raise an Issue on the [official repo](https://github.com/maxpmaxp/pdfreader/) or I could just follow the [instructions](https://packaging.python.org/en/latest/tutorials/packaging-projects/#generating-distribution-archives) and somehow build and ship the wheel myself.
+
+So that's just what I did.
+
+Surprisingly it was just as easy as cloning the repo, running some commands and presto the wheel is generated.
+
+### Downloading the File
+
+For someone that has been making websites for a while, you might think that it would be easy to get a file to download.
+But since this is all written in Python and that is a whole other animal, it took some Googling and fiddling with some [tutorials](https://pyscript.recipes/basic/file-download/) to finally get it to work.
+Phew!
+
+## Conclusion
+
+That's about it!
+Just a short, simple and frankly very useful project that took just as much time to create as it took me to write this post (and I can't believe that that is the case).
+I hope that people actually use it and love it!
+
+## Appendix
+
+### A sample of `Pay`-ment platforms
+
+1. PayNow (the best and IMO the only one we need)
+2. PayLah!
+3. PayAnyone
+4. FavePay
+5. ShopeePay
+6. AliPay
+7. Apple Pay
+8. Google Pay
+9. Samsung Pay
+10. Grab Pay
+11. NETS Pay
+12. WeChat Pay
