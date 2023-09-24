@@ -134,7 +134,7 @@ const config = {
               },
               {
                 label: "Email",
-                href: "hello@bhargav.io",
+                href: "mailto:hello@bhargav.io",
               },
             ],
           },
