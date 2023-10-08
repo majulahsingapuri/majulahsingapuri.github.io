@@ -68,6 +68,9 @@ const config = {
           priority: 0.5,
           filename: "sitemap.xml",
         },
+        gtag: {
+          trackingID: "G-S3K30Y4N2K",
+        },
       }),
     ],
   ],
