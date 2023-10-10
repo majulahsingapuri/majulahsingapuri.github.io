@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmajulahsingapuri_github_io=self.webpackChunkmajulahsingapuri_github_io||[]).push([[9889],{8734:a=>{a.exports=JSON.parse('{"label":"payments","permalink":"/blog/tags/payments","allTagsPath":"/blog/tags","count":1}')}}]);

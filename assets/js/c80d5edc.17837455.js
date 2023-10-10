@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmajulahsingapuri_github_io=self.webpackChunkmajulahsingapuri_github_io||[]).push([[5407],{9213:a=>{a.exports=JSON.parse('{"label":"architecture","permalink":"/blog/tags/architecture","allTagsPath":"/blog/tags","count":1}')}}]);
