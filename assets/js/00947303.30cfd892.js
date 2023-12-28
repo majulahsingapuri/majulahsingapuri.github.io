@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmajulahsingapuri_github_io=self.webpackChunkmajulahsingapuri_github_io||[]).push([[78],{8905:a=>{a.exports=JSON.parse('{"permalink":"/blog/tags/django-ninja","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"A place for me to write some thoughts","blogTitle":"Bhargav\'s blog"}')}}]);

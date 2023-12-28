@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmajulahsingapuri_github_io=self.webpackChunkmajulahsingapuri_github_io||[]).push([[259],{8769:a=>{a.exports=JSON.parse('{"permalink":"/blog/tags/frontend","page":1,"postsPerPage":10,"totalPages":1,"totalCount":3,"blogDescription":"A place for me to write some thoughts","blogTitle":"Bhargav\'s blog"}')}}]);
