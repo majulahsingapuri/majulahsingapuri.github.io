@@ -1,8 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const lightCodeTheme = require("prism-react-renderer").themes.github;
+const darkCodeTheme = require("prism-react-renderer").themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -37,6 +37,15 @@ const config = {
       },
     ],
     "plugin-image-zoom",
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "ninja-auth",
+        path: "ninja-auth",
+        routeBasePath: "ninja-auth",
+        sidebarPath: require.resolve("./sidebars.js"),
+      },
+    ],
   ],
 
   presets: [
@@ -56,7 +65,8 @@ const config = {
           },
         },
         docs: {
-          path: "docs",
+          id: "default",
+          path: "projects",
           routeBasePath: "projects",
           sidebarPath: require.resolve("./sidebars.js"),
         },
@@ -94,6 +104,13 @@ const config = {
             docId: "introduction",
             label: "Projects",
             position: "left",
+          },
+          {
+            type: "doc",
+            docId: "ninja-auth-index",
+            label: "Ninja Auth",
+            position: "left",
+            docsPluginId: "ninja-auth",
           },
           { to: "/blog", label: "Blog", position: "left" },
           // right
