@@ -15,10 +15,10 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.1.0",
-    "@docusaurus/plugin-google-gtag": "^3.1.0",
-    "@docusaurus/plugin-sitemap": "^3.1.0",
-    "@docusaurus/preset-classic": "^3.1.0",
+    "@docusaurus/core": "^3.1.1",
+    "@docusaurus/plugin-google-gtag": "^3.1.1",
+    "@docusaurus/plugin-sitemap": "^3.1.1",
+    "@docusaurus/preset-classic": "^3.1.1",
     "@mdx-js/react": "^3.0.0",
     "@saucelabs/theme-github-codeblock": "^0.2.2",
     "clsx": "^2.1.0",
@@ -31,9 +31,9 @@
     "url": "^0.11.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.1.0",
-    "@docusaurus/tsconfig": "^3.1.0",
-    "@docusaurus/types": "^3.1.0",
+    "@docusaurus/module-type-aliases": "^3.1.1",
+    "@docusaurus/tsconfig": "^3.1.1",
+    "@docusaurus/types": "^3.1.1",
     "@tsconfig/docusaurus": "^2.0.2",
     "typescript": "^5.3.3"
   },
