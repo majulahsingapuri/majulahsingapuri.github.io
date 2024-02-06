@@ -37,7 +37,7 @@ For DRA it is the <code>authtoken</code> app and for Ninja JWT it is the <code>b
 This means that all I have to do is to keep the core authentication logic in the main app and add any other logic like checking of tokens and creating refresh endpoints in sub-apps.
 This ensures that there is a top-down hierarchy and developers only use what they need.</p>
 <p>What I ended up with is the <a href="https://pypi.org/project/dj-ninja-auth/" target="_blank" rel="noopener noreferrer">following</a> library.</p>
-<p><img loading="lazy" alt="dj-ninja-auth project page" src="https://majulahsingapuri.github.io/assets/images/dj-ninja-auth-project-page-3ab6f93d6ebcbe6adcf1fbbd60113693.png" width="1146" height="655" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="dj-ninja-auth project page" src="https://majulahsingapuri.github.io/assets/images/dj-ninja-auth-project-page-3ab6f93d6ebcbe6adcf1fbbd60113693.png" width="1146" height="655" class="img_ev3q"></p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="next-steps">Next Steps<a href="https://majulahsingapuri.github.io/blog/django-ninja-auth#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps">​</a></h2>
 <p>Using an email and password for authentication is so old school.
 Where is the good stuff? We need social authentication and since security is also important, we need to add in MFA.
@@ -74,27 +74,27 @@ Now let's run through some of the major changes that have happened in the projec
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="url-resolution">URL Resolution<a href="https://majulahsingapuri.github.io/blog/personal-expenses-pt-3#url-resolution" class="hash-link" aria-label="Direct link to URL Resolution" title="Direct link to URL Resolution">​</a></h2>
 <p>In the last update, I was using Bind9 as the nameserver to resolve local domain names to the server running my application and <a href="https://caddyserver.com/" target="_blank" rel="noopener noreferrer">Caddy</a> to reverse proxy the applications in my Docker environment.
 A flow of how that works is shown in the diagram below.</p>
-<p><img loading="lazy" alt="Status thus far" src="https://majulahsingapuri.github.io/assets/images/status-thus-far-711ba853e67e2cba535733e04f4dda92.png" width="1454" height="632" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Status thus far" src="https://majulahsingapuri.github.io/assets/images/status-thus-far-711ba853e67e2cba535733e04f4dda92.png" width="1454" height="632" class="img_ev3q"></p>
 <p>Unfortunately - if you remember from the last update - I was having issues resolving my domains with my Bind9 server.
 In hindsight I think it was probably because it was not an authoritative nameserver, which I <a href="https://kb.porkbun.com/article/63-how-to-switch-to-porkbuns-nameservers" target="_blank" rel="noopener noreferrer">later found out</a> I have to declare on the Porkbun site.</p>
 <p>To keep things simpler, and not have to wrestle with more complexity in the system, I decided to use Porkbun's DNS records as per normal to resolve domain names and Caddy to reverse proxy the requests to the correct container.
 This way, I can still update records on the fly as Caddy can be quickly hot-reloaded and it gives me the added benefit of SSL/TLS encryption as elaborated in the next section.</p>
 <p>Thus my DNS resolution flow looks as such</p>
-<p><img loading="lazy" alt="New URL resolution" src="https://majulahsingapuri.github.io/assets/images/new-url-resolution-1aafe59e4cc169f6fefdb8d2061b00ff.png" width="1454" height="665" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="New URL resolution" src="https://majulahsingapuri.github.io/assets/images/new-url-resolution-1aafe59e4cc169f6fefdb8d2061b00ff.png" width="1454" height="665" class="img_ev3q"></p>
 <p>Additionally, I had to add a wildcard DNS record using the Porkbun website to resolve all <code>*.local.bhargav.io</code> domains to <code>192.168.79.19</code>, where Caddy will then take care of the reverse proxying.</p>
-<p><img loading="lazy" alt="DNS entries" src="https://majulahsingapuri.github.io/assets/images/dns-entries-920506c6cd3be53b79807e1946d445f6.png" width="846" height="447" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="DNS entries" src="https://majulahsingapuri.github.io/assets/images/dns-entries-920506c6cd3be53b79807e1946d445f6.png" width="846" height="447" class="img_ev3q"></p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="secure-socket-layer">Secure Socket Layer<a href="https://majulahsingapuri.github.io/blog/personal-expenses-pt-3#secure-socket-layer" class="hash-link" aria-label="Direct link to Secure Socket Layer" title="Direct link to Secure Socket Layer">​</a></h2>
 <p>Ever wonder why there is a lock icon next to any URL that you type in your browser? It shows that your connection to the server is secure and the data that is being transmitted and received is encrypted.
 It also gives your browser the assurance that the server is who it says it is.</p>
 <p>For more information you can read up on <a href="https://www.cloudflare.com/en-gb/learning/ssl/what-is-ssl/" target="_blank" rel="noopener noreferrer">this Cloudflare article</a> for a primer but the important thing to note is that the server has a certificate signed by a trusted authority (CA) that has a public key which the client uses to encrypt data and a private key that the server uses to decrypt data.</p>
-<p><img loading="lazy" alt="SSL explanation" src="https://majulahsingapuri.github.io/assets/images/ssl-explainer-9fa6da3fd3f23851740592123f0aa8cd.png" width="1667" height="1113" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="SSL explanation" src="https://majulahsingapuri.github.io/assets/images/ssl-explainer-9fa6da3fd3f23851740592123f0aa8cd.png" width="1667" height="1113" class="img_ev3q"></p>
 <p>In our case, my domain registrar has <a href="https://porkbun.com/api/json/v3/documentation#SSL%20Retrieve%20Bundle%20by%20Domain" target="_blank" rel="noopener noreferrer">API endpoints</a> that allow for a reverse proxy or some similar software to get these certificates rather than storing the certificates and having to renew them every year and manually upload them to the server in question.
 I am using Caddy as my reverse proxy and it provides this <a href="https://github.com/caddy-dns/porkbun" target="_blank" rel="noopener noreferrer">handy bit of code</a> to encrypt all my communications on my local network.</p>
 <p>Now the flow of loading the login page of my authentication server looks like the following.</p>
-<p><img loading="lazy" alt="SSL URL resolution" src="https://majulahsingapuri.github.io/assets/images/ssl-url-resolution-a4078abf3353cc07eb603f7dc9e9a1bb.png" width="1414" height="636" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="SSL URL resolution" src="https://majulahsingapuri.github.io/assets/images/ssl-url-resolution-a4078abf3353cc07eb603f7dc9e9a1bb.png" width="1414" height="636" class="img_ev3q"></p>
 <p>It is definitely more complex than before but now with the added benefit of being a secure connection.
 Finally, we have an authenticated login page.</p>
-<p><img loading="lazy" alt="SSL homepage" src="https://majulahsingapuri.github.io/assets/images/ssl-homepage-f11ff982fccd3c5a2cf21d04e4ccf108.png" width="1920" height="936" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="SSL homepage" src="https://majulahsingapuri.github.io/assets/images/ssl-homepage-f11ff982fccd3c5a2cf21d04e4ccf108.png" width="1920" height="936" class="img_ev3q"></p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="authentication">Authentication<a href="https://majulahsingapuri.github.io/blog/personal-expenses-pt-3#authentication" class="hash-link" aria-label="Direct link to Authentication" title="Direct link to Authentication">​</a></h2>
 <p>Let's say that now we have built up the authentication page that allows the user to sign in on our auth subdomain, how do we ensure that this authentication stays intact on another subdomain such as <code>app.local.bhargav.io</code>? How do we also prove that the user is who they say they are?</p>
 <p>Since we have already established a secure connection with the server, we can in fact send credentials to the client so that the client can then use them in every subsequent request to the server and be considered authorised.</p>
@@ -132,14 +132,14 @@ localhost is also considered a TLD since there is nothing that comes after it.</
 <p>Thus to emulate how my application will run in "production", we can use a subdomain like <code>auth.local.localhost</code>.
 This behaves in the same way my actual domain will behave and the best part is that there is no need to set up DNS servers and A records.
 Your machine will automatically resolve localhost domains to itself and all you need is reverse proxy to listen for this domain and reroute requests to the right servers running on your own machine.</p>
-<p><img loading="lazy" alt="Local Testing" src="https://majulahsingapuri.github.io/assets/images/local-testing-3391e1fd18ae06288b3eb677263515fd.png" width="1920" height="1014" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Local Testing" src="https://majulahsingapuri.github.io/assets/images/local-testing-3391e1fd18ae06288b3eb677263515fd.png" width="1920" height="1014" class="img_ev3q"></p>
 <p>This will also ensure that the cookies work as intended and we can also self-sign the TLS certificates to test how the app behaves using SSL.
 Your browser might complain a bit but that's fine.
 We can also see that credentials are being stored when the user successfully authenticates and logs in.</p>
-<p><img loading="lazy" alt="Tokens in Browser" src="https://majulahsingapuri.github.io/assets/images/tokens-5075ec169de2286ad114a4a2264470b0.png" width="1920" height="928" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Tokens in Browser" src="https://majulahsingapuri.github.io/assets/images/tokens-5075ec169de2286ad114a4a2264470b0.png" width="1920" height="928" class="img_ev3q"></p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="next-steps">Next Steps<a href="https://majulahsingapuri.github.io/blog/personal-expenses-pt-3#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps">​</a></h2>
 <p>So there we have it folks, a working authentication page that on successful sign in will redirect us to an app page where we can still access the JWTs to use for further requests.</p>
-<p><img loading="lazy" alt="Profile Page" src="https://majulahsingapuri.github.io/assets/images/profile-page-f12611be10c50a6de3dc0030064e16a5.png" width="1920" height="1014" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Profile Page" src="https://majulahsingapuri.github.io/assets/images/profile-page-f12611be10c50a6de3dc0030064e16a5.png" width="1920" height="1014" class="img_ev3q"></p>
 <p>As stated last time, next steps involve creating GitHub actions that will automatically package and deploy my applications to the right servers.
 I had an issue with my Mac Mini not being able to turn on SSH and thus it was time to say goodbye to an old friend.
 Perhaps in the future I will have a seperate and better computer that is capable of hadling the tasks that I need it to and we will be off to the races.</p>
@@ -192,7 +192,7 @@ We also need to use a DNS server to to map our domain name to the host server's 
 Luckily most routers come with a setting called DCHP Reservation that allows us to do just that.
 Your router will list all the currently connected devices and their associated MAC and IP addresses as shown below.
 Refer to your router's manual for how to reserve IP addresses.</p>
-<table><thead><tr><th style="text-align:center"><img loading="lazy" alt="DCHP Reservation" src="https://majulahsingapuri.github.io/assets/images/dhcp-server-02bb346d28490a6e029b182de6f2e644.png" width="1173" height="962" class="img_ev3q"></th></tr></thead><tbody><tr><td style="text-align:center"><strong>DCHP Reservation</strong></td></tr></tbody></table>
+<table><thead><tr><th style="text-align:center"><img decoding="async" loading="lazy" alt="DCHP Reservation" src="https://majulahsingapuri.github.io/assets/images/dhcp-server-02bb346d28490a6e029b182de6f2e644.png" width="1173" height="962" class="img_ev3q"></th></tr></thead><tbody><tr><td style="text-align:center"><strong>DCHP Reservation</strong></td></tr></tbody></table>
 <p>Now that our computer has a fixed (static) IP address, it will forever be reachable at this address even if the computer disconnects and reconnects to the network at a later time.</p>
 <p>Second, the DNS server.
 We will get to setting up the server later on, but first we need to decide where the DNS server is running.
@@ -249,14 +249,14 @@ Essentially what the Dockerfile will do is to spell out steps to create and star
 <p>We are just going to start off with the default code that comes when setting up Next.js.
 The Dockerfile is available on the auth frontend repository.
 This container is then built and orchestrated on the same internal network as Caddy with Docker Compose.</p>
-<table><thead><tr><th style="text-align:center"><img loading="lazy" alt="docker-compose.yml" src="https://majulahsingapuri.github.io/assets/images/docker-compose-file-e036b36355739ae0a826c54b333d7adb.png" width="1919" height="978" class="img_ev3q"></th></tr></thead><tbody><tr><td style="text-align:center"><strong>docker-compose.yml</strong></td></tr></tbody></table>
+<table><thead><tr><th style="text-align:center"><img decoding="async" loading="lazy" alt="docker-compose.yml" src="https://majulahsingapuri.github.io/assets/images/docker-compose-file-e036b36355739ae0a826c54b333d7adb.png" width="1919" height="978" class="img_ev3q"></th></tr></thead><tbody><tr><td style="text-align:center"><strong>docker-compose.yml</strong></td></tr></tbody></table>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="results">Results<a href="https://majulahsingapuri.github.io/blog/personal-expenses-pt-2#results" class="hash-link" aria-label="Direct link to Results" title="Direct link to Results">​</a></h2>
 <p>Once the containers are built successfully, we can navigate to our auth url and we see the following:</p>
-<table><thead><tr><th style="text-align:center"><img loading="lazy" alt="Error Page" src="https://majulahsingapuri.github.io/assets/images/site-cannot-be-reached-253baf64c755a51616ec193c4c40c111.png" width="1915" height="975" class="img_ev3q"></th></tr></thead><tbody><tr><td style="text-align:center"><strong>Error Page</strong></td></tr></tbody></table>
+<table><thead><tr><th style="text-align:center"><img decoding="async" loading="lazy" alt="Error Page" src="https://majulahsingapuri.github.io/assets/images/site-cannot-be-reached-253baf64c755a51616ec193c4c40c111.png" width="1915" height="975" class="img_ev3q"></th></tr></thead><tbody><tr><td style="text-align:center"><strong>Error Page</strong></td></tr></tbody></table>
 <p>Err...
 Why is the page not being served?</p>
 <p>When running nslookup on the DNS server for a random subdomian vs the auth subdomain, the following happens:</p>
-<table><thead><tr><th style="text-align:center"><img loading="lazy" alt="Cannot find auth page" src="https://majulahsingapuri.github.io/assets/images/cannot-find-auth-8831594a67592735b3e68ab28ea4f00e.png" width="518" height="198" class="img_ev3q"></th></tr></thead><tbody><tr><td style="text-align:center"><strong>Cannot find auth page</strong></td></tr></tbody></table>
+<table><thead><tr><th style="text-align:center"><img decoding="async" loading="lazy" alt="Cannot find auth page" src="https://majulahsingapuri.github.io/assets/images/cannot-find-auth-8831594a67592735b3e68ab28ea4f00e.png" width="518" height="198" class="img_ev3q"></th></tr></thead><tbody><tr><td style="text-align:center"><strong>Cannot find auth page</strong></td></tr></tbody></table>
 <p>Cannot find IP for auth but can for hello</p>
 <p>This is strange and not supposed to happen.
 There was no record for hello and yet it was being served.

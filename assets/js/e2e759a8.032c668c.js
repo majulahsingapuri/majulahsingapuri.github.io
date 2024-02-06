@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmajulahsingapuri_github_io=self.webpackChunkmajulahsingapuri_github_io||[]).push([[6173],{5120:a=>{a.exports=JSON.parse('[{"label":"dj-ninja-auth","permalink":"/ninja-auth/tags/dj-ninja-auth","count":11},{"label":"introduction","permalink":"/ninja-auth/tags/introduction","count":1}]')}}]);
