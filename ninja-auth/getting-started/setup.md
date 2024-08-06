@@ -45,7 +45,7 @@ To set up the base library, follow the following steps.
        ...
    ]
 
-   NINJA_AUTH_PASSWORD_RESET_URL = "http://localhost:8000/<YOUR_PASSWORD_RESET_FRONTEND_URL>/"
+   AUTH_PASSWORD_RESET_URL = "http://localhost:8000/<YOUR_PASSWORD_RESET_FRONTEND_URL>/"
    ```
 
 This will give you 5 basic endpoints that are not secured and can be called by anyone.
