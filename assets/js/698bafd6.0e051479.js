@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmajulahsingapuri_github_io=self.webpackChunkmajulahsingapuri_github_io||[]).push([[9145],{9034:a=>{a.exports=JSON.parse('{"label":"django-ninja","permalink":"/blog/tags/django-ninja","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
