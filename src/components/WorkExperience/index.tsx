@@ -10,6 +10,44 @@ type JobItem = {
 
 const JobList: JobItem[] = [
   {
+    company: "United Overseas Bank",
+    description: [
+      <>
+        Upgraded encryption from a vulnerable algorithm to a secure version
+        using <strong>Axway's API Gateway and PolicyStudio</strong>, resulting
+        in increased customer security.
+      </>,
+      <>
+        Managed extensive documentation and client communication to ensure
+        smooth transition and compliance.
+      </>,
+
+      <>
+        Designed and implemented a <strong>Splunk</strong>-based dashboard to
+        monitor server health, displaying critical metrics such as transactions
+        per second and HTTP statuses.
+      </>,
+
+      <>
+        Collaborated with the Splunk Dashboard software team to ensure accurate
+        log generation, ingestion, and display, significantly reducing
+        diagnostic time from hours to seconds.
+      </>,
+
+      <>
+        Created a pipeline using <strong>Excel</strong> with{" "}
+        <strong>PowerQuery</strong> and <strong>Pivot Tables</strong> to log and
+        analyze API transaction volume by API, type, and country.
+      </>,
+
+      <>
+        Enabled business teams to forecast API usage accurately, aiding in
+        resource allocation and transforming the cost center into a
+      </>,
+    ],
+    years: "July 2023 - Aug 2024",
+  },
+  {
     company: "Vertex Holdings",
     description: [
       <>
