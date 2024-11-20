@@ -13,36 +13,22 @@ const JobList: JobItem[] = [
     company: "United Overseas Bank",
     description: [
       <>
-        Upgraded encryption from a vulnerable algorithm to a secure version
-        using <strong>Axway's API Gateway and PolicyStudio</strong>, resulting
-        in increased customer security.
+        <strong>API Transaction Pipeline</strong>: Created a pipeline using{" "}
+        <strong>Excel</strong> with <strong>PowerQuery</strong> and Pivot Tables
+        to log and analyse over 10M API transactions by API, type, and country,
+        enabling key decision holders to make compute resource allocation
+        decisions and manage costs.
       </>,
       <>
-        Managed extensive documentation and client communication to ensure
-        smooth transition and compliance.
+        <strong>Splunk Dashboard</strong>: Designed and implemented a{" "}
+        <strong>Splunk</strong> dashboard to monitor server health, displaying
+        critical metrics such as transactions per second and HTTP statuses,
+        reducing diagnostic time from over 10 hours to under 10 seconds.
       </>,
-
       <>
-        Designed and implemented a <strong>Splunk</strong>-based dashboard to
-        monitor server health, displaying critical metrics such as transactions
-        per second and HTTP statuses.
-      </>,
-
-      <>
-        Collaborated with the Splunk Dashboard software team to ensure accurate
-        log generation, ingestion, and display, significantly reducing
-        diagnostic time from hours to seconds.
-      </>,
-
-      <>
-        Created a pipeline using <strong>Excel</strong> with{" "}
-        <strong>PowerQuery</strong> and <strong>Pivot Tables</strong> to log and
-        analyze API transaction volume by API, type, and country.
-      </>,
-
-      <>
-        Enabled business teams to forecast API usage accurately, aiding in
-        resource allocation and transforming the cost center into a
+        <strong>API Security</strong>: Upgraded API encryption algorithms with
+        Axway's API Gateway and PolicyStudio, resulting in increased customer
+        security.
       </>,
     ],
     years: "July 2023 - Aug 2024",
@@ -51,15 +37,17 @@ const JobList: JobItem[] = [
     company: "Vertex Holdings",
     description: [
       <>
-        Built and deployed a Full Stack <strong>Django-React</strong> app on{" "}
-        <strong>GCP</strong> using <strong>Terraform</strong> for internal
-        company use that simplified processes for the various Funds under the
-        Vertex umbrella.
+        <strong>Full Stack Application</strong>: Developed a{" "}
+        <strong>Django-React</strong> application on{" "}
+        <strong>Google Cloud Platform</strong> utilising{" "}
+        <strong>Terraform</strong> for internal company use, simplifying
+        processes for various Funds under the Vertex umbrella.
       </>,
       <>
-        Ingested data from external databases, APIs and websites using{" "}
-        <strong>Python</strong> Scripts and <strong>Airflow</strong> to expand
-        the data available to the various Funds that allowed for better outreach
+        <strong>Data Science</strong>: Ingested over 1M data points from
+        external databases, APIs and websites using <strong>Python</strong>{" "}
+        Scripts, <strong>SQL</strong> and <strong>Airflow</strong> to expand
+        data availability to various Funds, allowing for better outreach
         opportunities and improved investment decisions.
       </>,
     ],
@@ -69,15 +57,16 @@ const JobList: JobItem[] = [
     company: "UpSkills",
     description: [
       <>
-        Lead a team of Interns to create a Full Stack application in{" "}
-        <strong>Angular</strong>, <strong>Flask</strong> and{" "}
-        <strong>MongoDB</strong> that was deployed using <strong>Docker</strong>{" "}
-        for demonstrations to large local banks.
+        <strong>Full Stack Application</strong>: Lead a team of Interns to
+        create a Document Tracking application in <strong>Angular</strong>,{" "}
+        <strong>Flask</strong> and <strong>MongoDB</strong> that was deployed
+        using <strong>Docker</strong>.
       </>,
       <>
-        Collaborated with an International Developer Team to create an internal
-        Software Licensing and tracking system that was used by the company to
-        ensure that customers stayed within contractual obligations.
+        <strong>Licensing Server</strong>: Collaborated with an International
+        Developer Team to create an internal Software Licensing and tracking
+        system in <strong>Flask</strong> that was used by the company to ensure
+        that customers stayed within contractual obligations.
       </>,
     ],
     years: "May 2021 - July 2021",
