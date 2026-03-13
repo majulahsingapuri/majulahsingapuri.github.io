@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmajulahsingapuri_github_io=globalThis.webpackChunkmajulahsingapuri_github_io||[]).push([[2675],{6553(a){a.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"ninja-auth"}')}}]);

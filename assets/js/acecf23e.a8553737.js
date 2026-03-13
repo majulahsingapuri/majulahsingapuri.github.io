@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmajulahsingapuri_github_io=globalThis.webpackChunkmajulahsingapuri_github_io||[]).push([[1903],{1912(a){a.exports=JSON.parse('{"blogBasePath":"/blog","blogTitle":"Bhargav\'s blog","authorsListPath":"/blog/authors"}')}}]);

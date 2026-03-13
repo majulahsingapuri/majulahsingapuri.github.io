@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmajulahsingapuri_github_io=globalThis.webpackChunkmajulahsingapuri_github_io||[]).push([[5222],{4765(u){u.exports=JSON.parse('{"name":"docusaurus-plugin-debug","id":"default"}')}}]);

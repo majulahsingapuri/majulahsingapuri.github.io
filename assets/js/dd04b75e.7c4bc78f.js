@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmajulahsingapuri_github_io=globalThis.webpackChunkmajulahsingapuri_github_io||[]).push([[1672],{643(a){a.exports=JSON.parse('{"authors":[{"name":"Bhargav Singapuri","title":"SWE and Data Scientist","url":"https://github.com/majulahsingapuri","imageURL":"https://github.com/majulahsingapuri.png","key":"bhargav","page":null,"count":6}]}')}}]);
