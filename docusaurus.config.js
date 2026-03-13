@@ -14,8 +14,13 @@ const config = {
   organizationName: "majulahsingapuri", // Usually your GitHub org/user name.
   projectName: "majulahsingapuri.github.io", // Usually your repo name.
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "throw",
   trailingSlash: true,
+
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "throw",
+    },
+  },
 
   i18n: {
     defaultLocale: "en",
@@ -140,18 +145,6 @@ const config = {
           {
             title: "More Socials",
             items: [
-              {
-                label: "Instagram",
-                href: "https://instagram.com/majulahsingapuri",
-              },
-              {
-                label: "TikTok",
-                href: "https://tiktok.com/@majulahs",
-              },
-              {
-                label: "Substack",
-                href: "https://majulahsingapuri.substack.com",
-              },
               {
                 label: "Email",
                 href: "mailto:hello@bhargav.io",

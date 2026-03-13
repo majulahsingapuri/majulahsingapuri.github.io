@@ -30,7 +30,7 @@ function HomepageHeader() {
         <p className="hero__subtitle">
           <strong>Transformations with Technology and Data Insights</strong>{" "}
           <br />
-          Full Stack Software Engineer | AI & Machine Learning Specialist
+          AI & Machine Learning Specialist
         </p>
         <div className={styles.buttons}>
           <a
